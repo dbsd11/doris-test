@@ -1,0 +1,836 @@
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 06:04:44,012 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )2025-01-02 06:04:54,188 WARN  org.apache.hadoop.fs.s3a.S3ABlockOutputStream                [] - Application invoked the Syncable API against stream writing to wh/db_paimon.db/customer/schema/.schema-0.120fe46f-b31f-4563-9341-73d6285643e5.tmp. This is unsupported
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/01/02 06:05:10 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/01/02 06:05:18 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark Web UI available at http://demo-spark-iceberg:4041
+Spark master: local[*], Application Id: local-1735797918999
+Time taken: 34.099 seconds
+25/01/02 06:06:04 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:06:33 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:06:33 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:06:36 WARN Mimetypes: Unable to find 'mime.types' file in classpath
+Time taken: 45.827 seconds
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 06:14:44,310 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/01/02 06:14:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/01/02 06:14:53 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark Web UI available at http://demo-spark-iceberg:4041
+Spark master: local[*], Application Id: local-1735798493121
+Time taken: 5.16 seconds
+25/01/02 06:15:00 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:15:08 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:15:08 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:15:10 WARN Mimetypes: Unable to find 'mime.types' file in classpath
+Time taken: 15.68 seconds
+^C^CWARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 06:53:09,488 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/01/02 06:53:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/01/02 06:53:22 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark Web UI available at http://demo-spark-iceberg:4041
+Spark master: local[*], Application Id: local-1735800802825
+Time taken: 7.8 seconds
+25/01/02 06:53:34 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:53:41 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:53:41 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 06:53:42 WARN Mimetypes: Unable to find 'mime.types' file in classpath
+Time taken: 14.045 seconds
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[31;1m[ERROR] Could not execute SQL statement. Reason:
+org.apache.iceberg.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://rest:8181 [rest/172.20.0.2] failed: Connection refused (Connection refused)[0m
+
+Shutting down the session...
+done.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/01/02 06:56:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/01/02 06:56:21 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark Web UI available at http://demo-spark-iceberg:4041
+Spark master: local[*], Application Id: local-1735800981694
+Time taken: 5.394 seconds
+25/01/02 06:56:28 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+[TABLE_OR_VIEW_NOT_FOUND] The table or view `paimon`.`db_paimon`.`customer` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 3 pos 17;
+'InsertIntoStatement 'UnresolvedRelation [paimon, db_paimon, customer], [], false, true, false, false
++- Project [c_custkey#0, c_name#1, c_address#2, c_nationkey#3, c_phone#4, c_acctbal#5, c_mktsegment#6, c_comment#7]
+   +- SubqueryAlias customer_files
+      +- View (`customer_files`, [c_custkey#0,c_name#1,c_address#2,c_nationkey#3,c_phone#4,c_acctbal#5,c_mktsegment#6,c_comment#7])
+         +- Relation [c_custkey#0,c_name#1,c_address#2,c_nationkey#3,c_phone#4,c_acctbal#5,c_mktsegment#6,c_comment#7] parquet
+
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 07:05:10,722 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )2025-01-02 07:05:22,804 WARN  org.apache.hadoop.fs.s3a.S3ABlockOutputStream                [] - Application invoked the Syncable API against stream writing to wh/db_paimon.db/customer/schema/.schema-0.069ac70e-7fb3-4bb3-9db1-6ae9a2d6bb91.tmp. This is unsupported
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/01/02 07:05:53 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/01/02 07:05:59 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark Web UI available at http://demo-spark-iceberg:4041
+Spark master: local[*], Application Id: local-1735801560662
+Time taken: 35.808 seconds
+25/01/02 07:06:51 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 07:07:31 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 07:07:31 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 07:07:37 WARN Mimetypes: Unable to find 'mime.types' file in classpath
+Time taken: 65.071 seconds
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[31;1m[ERROR] Could not execute SQL statement. Reason:
+org.apache.iceberg.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://rest:8181 [rest/172.20.0.2] failed: Connection refused (Connection refused)[0m
+
+Shutting down the session...
+done.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/01/02 07:36:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/01/02 07:36:52 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark Web UI available at http://demo-spark-iceberg:4041
+Spark master: local[*], Application Id: local-1735803413630
+Time taken: 38.388 seconds
+25/01/02 07:37:45 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+[TABLE_OR_VIEW_NOT_FOUND] The table or view `paimon`.`db_paimon`.`customer` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 3 pos 17;
+'InsertIntoStatement 'UnresolvedRelation [paimon, db_paimon, customer], [], false, true, false, false
++- Project [c_custkey#0, c_name#1, c_address#2, c_nationkey#3, c_phone#4, c_acctbal#5, c_mktsegment#6, c_comment#7]
+   +- SubqueryAlias customer_files
+      +- View (`customer_files`, [c_custkey#0,c_name#1,c_address#2,c_nationkey#3,c_phone#4,c_acctbal#5,c_mktsegment#6,c_comment#7])
+         +- Relation [c_custkey#0,c_name#1,c_address#2,c_nationkey#3,c_phone#4,c_acctbal#5,c_mktsegment#6,c_comment#7] parquet
+
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 07:48:29,388 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/01/02 07:48:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/01/02 07:48:48 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+Spark Web UI available at http://demo-spark-iceberg:4041
+Spark master: local[*], Application Id: local-1735804128241
+Time taken: 3.852 seconds
+25/01/02 07:48:53 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 07:49:00 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 07:49:00 WARN HadoopUtils: Could not find Hadoop configuration via any of the supported methods
+25/01/02 07:49:02 WARN Mimetypes: Unable to find 'mime.types' file in classpath
+Time taken: 13.965 seconds
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 08:01:58,953 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )2025-01-02 08:02:04,431 WARN  org.apache.hadoop.fs.s3a.S3ABlockOutputStream                [] - Application invoked the Syncable API against stream writing to wh/db_paimon.db/customer/schema/.schema-0.29d3b879-7e5e-468a-9414-b4eb5f7acf17.tmp. This is unsupported
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 08:15:33,174 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )2025-01-02 08:15:48,084 WARN  org.apache.hadoop.fs.s3a.S3ABlockOutputStream                [] - Application invoked the Syncable API against stream writing to wh/db_paimon.db/customer/schema/.schema-0.c5554dc0-efb2-41ad-9af7-72713eca62ab.tmp. This is unsupported
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE TABLE if not exists iceberg.db_iceberg.tb_iceberg (
+>     id BIGINT,
+>     val string,
+>     PRIMARY KEY (id) NOT ENFORCED
+> ) WITH (
+> 'write.upsert.enabled'='true',
+> 'upsert-enabled'='true',
+> 'write.delete.mode'='merge-on-read',
+> 'write.update.mode'='merge-on-read'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 08:18:40,662 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+Shutting down the session...
+done.
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> CREATE CATALOG iceberg WITH (
+>   'type'='iceberg',
+>   'catalog-type'='rest',
+>   'uri'='http://rest:8181/',
+>   's3.endpoint'='http://minio:9000',
+>   'warehouse'='s3://warehouse/wh/'
+> )[31;1m[ERROR] Could not execute SQL statement. Reason:
+java.net.UnknownHostException: rest: Temporary failure in name resolution[0m
+
+Shutting down the session...
+done.
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 10:17:13,793 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )2025-01-02 10:17:19,396 WARN  org.apache.hadoop.fs.s3a.S3ABlockOutputStream                [] - Application invoked the Syncable API against stream writing to wh/db_paimon.db/customer/schema/.schema-0.f3001ff5-6647-46ce-b0a3-6ad4014fe68f.tmp. This is unsupported
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> insert into paimon.db_paimon.customer values (1,'sada', 'xxxzcz',1,'xxx',0.1,'zxzccc','xczxcasjdkasdalks')[34;1m[INFO] Submitting SQL update statement to the cluster...[0m
+[34;1m[INFO] SQL update statement has been successfully submitted to the cluster:[0m
+Job ID: 7457d195bb1dd78e2464a9271d991525
+
+
+Flink SQL> 
+Shutting down the session...
+done.
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-02 10:23:27,388 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> insert into paimon.db_paimon.customer values (1,'sada', 'xxxzcz',1,'xxx',0.1,'zxzccc','xczxcasjdkasdalks')[34;1m[INFO] Submitting SQL update statement to the cluster...[0m
+[34;1m[INFO] SQL update statement has been successfully submitted to the cluster:[0m
+Job ID: 45661d70df016617d69a24883e38975f
+
+
+Flink SQL> 
+Shutting down the session...
+done.
