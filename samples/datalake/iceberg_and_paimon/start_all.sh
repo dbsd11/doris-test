@@ -20,7 +20,7 @@
 set -e
 
 DORIS_PACKAGE=apache-doris-3.0.3-bin-x64
-DORIS_PACKAGE_MD5=43d97638ddcddb118451615b56ea6cc8
+DORIS_PACKAGE_MD5=451506533d76157680d9d47b06c35284
 DORIS_DOWNLOAD_URL=https://apache-doris-releases.oss-accelerate.aliyuncs.com
 
 download_source_file() {
@@ -86,7 +86,7 @@ if [[ ! -f "doris-bin/SUCCESS" ]]; then
     fi
     echo "Unpackage ${DORIS_PACKAGE}"
     tar xzf "${DORIS_PACKAGE}".tar.gz
-    mv "${DORIS_PACKAGE}" doris-bin
+    mv apache-doris-*-bin-x64 doris-bin
     touch doris-bin/SUCCESS
 fi
 

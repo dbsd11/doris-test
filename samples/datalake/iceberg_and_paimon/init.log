@@ -834,3 +834,55 @@ Job ID: 45661d70df016617d69a24883e38975f
 Flink SQL> 
 Shutting down the session...
 done.
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+WARNING: Unknown module: jdk.compiler specified to --add-exports
+[34;1m[INFO] Executing SQL from file.[0m
+
+Command history file path: /root/.flink-sql-history
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE CATALOG `paimon` WITH (
+>     'type' = 'paimon',
+>     'warehouse' = 's3://warehouse/wh',
+>     's3.endpoint'='http://minio:9000',
+>     's3.access-key' = 'admin',
+>     's3.secret-key' = 'password',
+>     's3.region' = 'us-east-1'
+> )2025-01-03 01:48:02,363 WARN  org.apache.hadoop.metrics2.impl.MetricsConfig                [] - Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> [34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> CREATE TABLE if not exists paimon.db_paimon.customer (
+>   `c_custkey` int,
+>   `c_name` varchar(25),
+>   `c_address` varchar(40),
+>   `c_nationkey` int,
+>   `c_phone` char(15),
+>   `c_acctbal` decimal(12,2),
+>   `c_mktsegment` char(10),
+>   `c_comment` varchar(117),
+>   PRIMARY KEY (c_custkey, c_nationkey) NOT ENFORCED
+> ) PARTITIONED BY (c_nationkey) WITH (
+>   'deletion-vectors.enabled' = 'true',
+>   'bucket'='1'
+> )2025-01-03 01:48:11,234 WARN  org.apache.hadoop.fs.s3a.S3ABlockOutputStream                [] - Application invoked the Syncable API against stream writing to wh/db_paimon.db/customer/schema/.schema-0.b7f8f9c9-e72f-4a77-a071-0f599c969059.tmp. This is unsupported
+[34;1m[INFO] Execute statement succeed.[0m
+
+Flink SQL> 
+> 
+> insert into paimon.db_paimon.customer values (1,'sada', 'xxxzcz',1,'xxx',0.1,'zxzccc','xczxcasjdkasdalks')[34;1m[INFO] Submitting SQL update statement to the cluster...[0m
+[34;1m[INFO] SQL update statement has been successfully submitted to the cluster:[0m
+Job ID: 4c9fd7bbd56322d3c942c6a236214667
+
+
+Flink SQL> 
+Shutting down the session...
+done.
