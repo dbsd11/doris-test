@@ -166,6 +166,19 @@ services:
       - ./sql/init_doris.sql:/opt/doris-bin/init_doris.sql
       - ./scripts:/opt/scripts
     command: bin/bash /opt/scripts/start_doris.sh
+  trino:
+    image: docker.1panel.live/trinodb/trino
+    container_name: doris-iceberg-paimon-trino
+    networks:
+      - demo-iceberg
+    hostname: trino
+    ports:
+      - ${TRINO_SERVER_PORT}:8080
+      - ${TRINO_SERVER_SSL_PORT}:8443
+    environment:
+      - CATALOG_MANAGEMENT=dynamic
+    volumes:
+      - ./trino-etc:/etc/trino
 
 networks:
   demo-iceberg:
