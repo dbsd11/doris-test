@@ -21,7 +21,7 @@ export JAVA_HOME=/opt/jdk-17.0.12
 export PATH=${JAVA_HOME}/bin:${PATH}
 
 echo 'start to copy...'
-cp -r /opt/doris-bin /opt/doris
+cp -r /opt/doris-bin/ /opt/doris/
 
 echo 'start fe...'
 rm -rf /opt/doris/fe/doris-meta/*
