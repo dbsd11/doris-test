@@ -20,6 +20,9 @@
 export JAVA_HOME=/opt/jdk-17.0.12
 export PATH=${JAVA_HOME}/bin:${PATH}
 
+echo 'start prepare ocr reader data ...'
+cp -rf /usr/share/zoneinfo/UTC /usr/share/zoneinfo/+00:00
+
 echo 'start prepare /opt/doris ...'
 rm -rf /opt/doris && ln -s /opt/doris-bin /opt/doris
 
