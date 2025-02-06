@@ -58,14 +58,14 @@ cd packages || exit
 
 download_source_file "${DORIS_PACKAGE}.tar.gz" "${DORIS_PACKAGE_MD5}" "${DORIS_DOWNLOAD_URL}"
 download_source_file "jdk-17.0.12_linux-x64_bin.tar.gz" "e8df6a595078d41b993a71ed55e503ab" "https://download.oracle.com/java/17/archive"
-#download_source_file "iceberg-aws-bundle-1.5.2.jar" "7087ac697254f8067d0f813521542263" "https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-aws-bundle/1.5.2"
-#download_source_file "iceberg-flink-runtime-1.18-1.5.2.jar" "8e895288e6770eea69ea05ffbc918c1b" "https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-flink-runtime-1.18/1.5.2"
-download_source_file "flink-connector-jdbc-3.1.2-1.18.jar" "5c99b637721dd339e10725b81ccedb60" "https://repo1.maven.org/maven2/org/apache/flink/flink-connector-jdbc/3.1.2-1.18"
-download_source_file "paimon-s3-0.8.0.jar" "3e510c634a21cbcdca4fd3b85786a20c" "https://repo1.maven.org/maven2/org/apache/paimon/paimon-s3/0.8.0"
-download_source_file "paimon-flink-1.18-0.8.0.jar" "f590d94af1b923a7c68152b558d5b25b" "https://repo1.maven.org/maven2/org/apache/paimon/paimon-flink-1.18/0.8.0"
-#download_source_file "paimon-spark-3.5-0.8.0.jar" "963d0c17d69034ecf77816f64863fc51" "https://repo1.maven.org/maven2/org/apache/paimon/paimon-spark-3.5/0.8.0"
-download_source_file "flink-shaded-hadoop-2-uber-2.8.3-10.0.jar" "f6f0be5b9cbebfd43e38121b209f4ecc" "https://repo1.maven.org/maven2/org/apache/flink/flink-shaded-hadoop-2-uber/2.8.3-10.0"
-download_source_file "flink-s3-fs-hadoop-1.18.0.jar" "60b75e0fdc5ed05f1213b593c4b66556" "https://repo1.maven.org/maven2/org/apache/flink/flink-s3-fs-hadoop/1.18.0"
+#download_source_file "iceberg-aws-bundle-1.5.2.jar" "7087ac697254f8067d0f813521542263" "https://https://maven.aliyun.com/repository/public/org/apache/iceberg/iceberg-aws-bundle/1.5.2"
+#download_source_file "iceberg-flink-runtime-1.18-1.5.2.jar" "8e895288e6770eea69ea05ffbc918c1b" "https://https://maven.aliyun.com/repository/public/org/apache/iceberg/iceberg-flink-runtime-1.18/1.5.2"
+download_source_file "flink-connector-jdbc-3.1.2-1.18.jar" "5c99b637721dd339e10725b81ccedb60" "https://https://maven.aliyun.com/repository/public/org/apache/flink/flink-connector-jdbc/3.1.2-1.18"
+download_source_file "paimon-s3-0.8.0.jar" "3e510c634a21cbcdca4fd3b85786a20c" "https://https://maven.aliyun.com/repository/public/org/apache/paimon/paimon-s3/0.8.0"
+download_source_file "paimon-flink-1.18-0.8.0.jar" "f590d94af1b923a7c68152b558d5b25b" "https://https://maven.aliyun.com/repository/public/org/apache/paimon/paimon-flink-1.18/0.8.0"
+#download_source_file "paimon-spark-3.5-0.8.0.jar" "963d0c17d69034ecf77816f64863fc51" "https://https://maven.aliyun.com/repository/public/org/apache/paimon/paimon-spark-3.5/0.8.0"
+download_source_file "flink-shaded-hadoop-2-uber-2.8.3-10.0.jar" "f6f0be5b9cbebfd43e38121b209f4ecc" "https://https://maven.aliyun.com/repository/public/org/apache/flink/flink-shaded-hadoop-2-uber/2.8.3-10.0"
+download_source_file "flink-s3-fs-hadoop-1.18.0.jar" "60b75e0fdc5ed05f1213b593c4b66556" "https://https://maven.aliyun.com/repository/public/org/apache/flink/flink-s3-fs-hadoop/1.18.0"
 
 if [[ ! -f "jdk-17.0.12/SUCCESS" ]]; then
     echo "Prepare jdk17 environment"
