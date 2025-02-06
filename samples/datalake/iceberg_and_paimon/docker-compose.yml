@@ -19,7 +19,7 @@ version: "3"
 
 services:
         #  spark:
-        #    image: docker.1panel.live/tabulario/spark-iceberg
+        #    image: docker.m.daocloud.io/tabulario/spark-iceberg
         #    container_name: doris-iceberg-paimon-spark
         #    hostname: demo-spark-iceberg
         #    build: spark/
@@ -40,7 +40,7 @@ services:
         #         - demo-iceberg
 
         #  rest:
-        #    image: docker.1panel.live/tabulario/iceberg-rest
+        #    image: docker.m.daocloud.io/tabulario/iceberg-rest
         #    container_name: doris-iceberg-paimon-iceberg-rest
         #    ports:
         #      - ${REST_CATALOG_PORT}:8181
@@ -59,7 +59,7 @@ services:
         #      - './scripts:/opt/scripts'
 
   minio:
-    image: docker.1panel.live/minio/minio
+    image: docker.m.daocloud.io/minio/minio
     restart: unless-stopped
     container_name: doris-iceberg-paimon-minio
     ports:
@@ -74,13 +74,13 @@ services:
         aliases:
           - warehouse.minio
     volumes:
-      - /home/juji/large_data/doris-minio-data:/data
+      - ${MINIO_HOST_DATA_DIR}:/data
     command: ["server", "/data", "--console-address", ":9001"]
 
   mc:
     depends_on:
       - minio
-    image: docker.1panel.live/minio/mc
+    image: docker.m.daocloud.io/minio/mc
     restart: unless-stopped
     container_name: doris-iceberg-paimon-mc
     environment:
@@ -99,7 +99,7 @@ services:
       "
 
   jobmanager:
-    image: docker.1panel.live/library/flink:1.18.0
+    image: docker.m.daocloud.io/library/flink:1.18.0
     restart: unless-stopped
     container_name: doris-iceberg-paimon-jobmanager
     environment:
@@ -129,7 +129,7 @@ services:
       replicas: 1
 
   taskmanager:
-    image: docker.1panel.live/library/flink:1.18.0
+    image: docker.m.daocloud.io/library/flink:1.18.0
     restart: unless-stopped
     environment:
       - JOB_MANAGER_RPC_ADDRESS=jobmanager
@@ -153,7 +153,7 @@ services:
       replicas: 1
   
   doris:
-    image: docker.1panel.live/library/mysql:8.0.18
+    image: docker.m.daocloud.io/library/mysql:8.0.18
     restart: unless-stopped
     container_name: doris-iceberg-paimon-doris
     networks:
